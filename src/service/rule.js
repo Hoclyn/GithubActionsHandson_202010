@@ -15,22 +15,28 @@ export const play = (move, opponentMove) => {
     case MOVE.rock:
       if (opponentMove === MOVE.scissors) {
         result = RESULT.win;
-      } else {
+      } else if (opponentMove === MOVE.paper) {
         result = RESULT.lose;
+      } else {
+        result = RESULT.draw;
       }
       break;
     case MOVE.scissors:
       if (opponentMove === MOVE.paper) {
         result = RESULT.win;
-      } else {
+      } else if (opponentMove === MOVE.rock) {
         result = RESULT.lose;
+      } else {
+        result = RESULT.draw;
       }
       break;
     case MOVE.paper:
       if (opponentMove === MOVE.rock) {
         result = RESULT.win;
-      } else {
+      } else if (opponentMove === MOVE.scissors) {
         result = RESULT.lose;
+      } else {
+        result = RESULT.draw;
       }
       break;
     default:
