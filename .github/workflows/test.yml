@@ -20,7 +20,9 @@ jobs:
       #
       - name: test
         run: npm test
-      
+    
       # failure
-      - name: The job has failed
-        if: ${{ failure() }}
+      - name: test failure
+        if: failure()
+        run: echo test failed.
+        
