@@ -26,7 +26,9 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: after checkout
-        run: ls -lth
+        run: |
+            ls -lth
+            pwd
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
