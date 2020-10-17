@@ -1,0 +1,20 @@
+name: Scheduled Unit Test
+
+on:
+  schedule:
+    - cron:  '*/5 * * * *'
+
+jobs:
+  unit_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+    
+      #
+      - name: install
+        run: npm install
+    
+      #
+      - name: test
+        run: npm test
